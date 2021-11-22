@@ -1,6 +1,7 @@
 class ChefController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_chef, only: [:show, :destroy]
+
   def index
     @chefs = Chef.all
   end
