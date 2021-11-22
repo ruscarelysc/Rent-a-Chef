@@ -1,2 +1,11 @@
-<h1>Chef#index</h1>
-<p>Find me in app/views/chef/index.html.erb</p>
+<h1>Chefs</h1>
+<div class="row">
+    <% @chefs.each do |chef| %>
+      <div class="co-12 colsm-6 col-md-4">
+        <%= link_to chef_path(chef), class:'text-decoration-none' do %>
+        <%= chef.name %>
+        <% end %>
+        <%= chef.description %>
+      </div>
+    <% end %>
+  </div>
