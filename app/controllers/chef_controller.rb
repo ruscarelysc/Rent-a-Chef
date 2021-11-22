@@ -5,7 +5,7 @@ class ChefController < ApplicationController
     @chefs = Chef.all
   end
 
-   def show
+  def show
   end
 
   def new
