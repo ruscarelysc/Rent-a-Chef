@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: "chefs#index"
   # resources :users, only: [:new, :create]
   resources :chefs do
-    resources :bookings, only: [:show, :index, :new, :create, :destroy]
+    resources :bookings, only: [:index, :new, :create]
     resources :reviews, only: [:index, :new, :create, :destroy]
   end
+  resources :bookings, only: [:destroy, :show]
 end
