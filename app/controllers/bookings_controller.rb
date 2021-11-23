@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :destroy]
-
+  before_action :set_chef, only: [:show, :destroy, :new, :create]
   def index
     @bookings = Booking.all
   end
@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path(@booking)
+      redirect_to root_path
     else
       render "new"
     end
@@ -25,13 +25,17 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to bookings_path(@booking)
+    redirect_to chef_bookings_path(@booking)
   end
 
   private
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def set_chef
+    @chef = Chef.find(params[:chef_id])
   end
 
   def booking_params
