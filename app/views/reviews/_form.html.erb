@@ -1,0 +1,9 @@
+<div class="container">
+
+    <%= simple_form_for [@booking.chef, @booking, @review] do |f| %>
+        <%= f.input :rating %>
+        <%= f.input :content %>
+        <%= f.submit class: 'btn btn-ghost' %>
+    <% end %>
+    <%= link_to 'Back', booking_path(@booking) %>
+</div>

@@ -1,2 +1,15 @@
-<h1>Booking#index</h1>
-<p>Find me in app/views/booking/index.html.erb</p>
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-black p-4">
+    <h1>Bookings</h1>
+  <div class="container py-5">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+    <p><% current_user.bookings.each do |user| %>
+      <ul>
+        <li><%= user.start_time %></li>
+        <li><%= user.end_time %></li>
+      </ul>
+
+    <% end %>
+    </div>
+  </div>
+</div>
