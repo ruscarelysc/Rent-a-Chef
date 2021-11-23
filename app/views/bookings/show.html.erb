@@ -1,2 +1,14 @@
-<h1>Booking#show</h1>
-<p>Find me in app/views/booking/show.html.erb</p>
+<%# <h1>Booking#show</h1>
+<p>Find me in app/views/booking/show.html.erb</p> %>
+
+
+<div class="container-listing">
+  <h2><strong>Congratulations, your booking has been confirmed!</strong></h2><br>
+  <h3><strong>Your trip details</strong></h3>
+
+  <strong>Start Time: <%= @booking.start_time %></strong> | <strong>End Time: <%= @booking.end_time %></strong>
+
+  <h4><strong><%= @booking.chef.title %></strong></h4>
+  <p>Location: <%= @booking.chef.address %></p>
+  <p><%= @booking.chef.description %></p>
+</div>
