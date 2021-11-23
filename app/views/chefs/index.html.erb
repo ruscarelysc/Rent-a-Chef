@@ -5,7 +5,7 @@
   <div class="container py-5">
     <div class="d-flex align-items-center justify-content-between mb-3">
     <% @chefs.each do |chef| %>
-      <%= link_to chef_path(chef), class:'text-decoration-none' do %>
+      <%= link_to chefs_path(chef), class:'text-decoration-none' do %>
       <%= chef.name %>
       <% end %>
     <% end %>

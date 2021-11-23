@@ -1,4 +1,4 @@
-class ChefController < ApplicationController
+class ChefsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_chef, only: [:show, :destroy]
 
@@ -15,8 +15,9 @@ class ChefController < ApplicationController
 
   def create
     @chef = Chef.new(chef_params)
+    @chef.user = current_user
     if @chef.save
-      redirect_to chef_path(@chef)
+      redirect_to chefs_path(@chef)
     else
       render "new"
     end
@@ -34,6 +35,6 @@ class ChefController < ApplicationController
   end
 
   def chef_params
-    params.require(:chef).permit(:name, :category, :price)
+    params.require(:chef).permit(:name, :category, :price, :description)
   end
 end
