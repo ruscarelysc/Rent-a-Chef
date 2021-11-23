@@ -10,15 +10,17 @@ class ChefPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    if policy(Chef).create?
+      link_to "New chef", new_chef_path
+    end
   end
 
   def update?
-    true
+    record.user == user
   end
 
   def destroy?
-    true
+    record.user == user
   end
 
 end
