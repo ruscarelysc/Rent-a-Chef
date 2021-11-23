@@ -2,8 +2,17 @@
   <h1><%= @chef.name %></h1>
   <h3>$<%= @chef.price %>.00</h3>
   <p class='grey'><%= @chef.category %></p>
-  <p><%= @chef.description %><br>
-  <br>
-  <%= link_to 'Edit', edit_chef_path(@chef.id) %>
-  <%= link_to 'Back', chefs_path %>
+  <p><%= @chef.description %>
+  <h4>Reviews</h4>
+    <% if @chef.reviews.length == 0  %>
+        <p> No reviews yet</p>
+    <% end %>
+  <p><% @chef.reviews.each do |review| %>
+      <p><%= review.rating %></p>
+      <p><%= review.content %></p>
+    <% end %>
+  </p><br>
+  <%= link_to 'Edit', edit_chef_path(@chef.id) %><br>
+  <%= link_to 'Back', chefs_path %><br>
+  <%= link_to 'Book this Chef', new_chef_booking_path(@chef.id) %>
 </div>

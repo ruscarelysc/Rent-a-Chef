@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :destroy]
-  before_action :set_chef, only: [:show, :destroy, :new, :create]
+  before_action :set_chef, only: [:new, :create]
+
   def index
     @bookings = Booking.all
   end
@@ -8,16 +9,16 @@ class BookingsController < ApplicationController
   def show
   end
 
-
   def new
-     @booking = Booking.new
+    @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.chef = @chef
     if @booking.save
-      redirect_to root_path
+      redirect_to booking_path(@booking)
     else
       render "new"
     end
@@ -39,6 +40,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time)
+    params.require(:booking).permit(:start_time, :end_time, :chef_id)
   end
 end
