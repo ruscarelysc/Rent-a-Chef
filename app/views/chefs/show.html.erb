@@ -1,3 +1,9 @@
-<h1>Chef#show</h1>
-<p>Find me in app/views/chef/show.html.erb</p>
-	
+<div class='container pt-5'>
+  <h1><%= @chef.name %></h1>
+  <h3>$<%= @chef.price %>.00</h3>
+  <p class='grey'><%= @chef.category %></p>
+  <p><%= @chef.description %><br>
+  <br>
+  <%= link_to 'Edit', edit_chef_path(@chef.id) %>
+  <%= link_to 'Back', chefs_path %>
+</div>
