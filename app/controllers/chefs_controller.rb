@@ -2,6 +2,10 @@ class ChefsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_chef, only: [:show, :destroy, :edit, :update]
 
+  def home
+    @chefs = Chef.all
+  end
+
   def index
     @chefs = Chef.all
   end
