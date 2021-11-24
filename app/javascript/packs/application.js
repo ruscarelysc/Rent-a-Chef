@@ -12,3 +12,15 @@ import 'bootstrap';
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+import flatpickr from "flatpickr";
+
+document.addEventListener('turbolinks:load', () => {
+  flatpickr("#flatpickr", {
+    allowInput: true,
+    altInput: true,
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+});
+})
