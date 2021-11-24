@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to chef_bookings_path(@booking)
+    redirect_to bookings_path
   end
 
   private

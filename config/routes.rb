@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   root to: "chefs#home"
   # resources :users, only: [:new, :create]
   resources :chefs do
-    resources :bookings, only: [:index, :new, :create] do
+    resources :bookings, only: [:new, :create] do
       resources :reviews, only: [:new, :create]
     end
     resources :reviews, only: [:index, :destroy]
   end
-  resources :bookings, only: [:destroy, :show]
+  resources :bookings, only: [:index, :destroy, :show]
 end
