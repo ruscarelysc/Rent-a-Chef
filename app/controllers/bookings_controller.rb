@@ -14,7 +14,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    byebug
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.chef = @chef
