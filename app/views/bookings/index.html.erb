@@ -8,7 +8,7 @@
         <%= booking.start_time.strftime("%l:%M %p until #{booking.end_time.strftime("%l:%M %p")} on the #{booking.start_time.day.ordinalize} of %B") %>
       <% end %>
     <% end %> <br>
-    <%= link_to 'Back to chef', chef_path(params[:chef_id]) %> <br>
+    <%= link_to 'Back to chefs', chefs_path %> <br>
     </div>
   </div>
 </div>
