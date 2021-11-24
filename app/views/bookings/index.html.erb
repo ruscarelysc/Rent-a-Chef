@@ -3,13 +3,12 @@
     <h1>Bookings</h1>
   <div class="container py-5">
     <div class="d-flex align-items-center justify-content-between mb-3">
-    <p><% current_user.bookings.each do |user| %>
-      <ul>
-        <li><%= user.start_time %></li>
-        <li><%= user.end_time %></li>
-      </ul>
-
-    <% end %>
+    <p><% current_user.bookings.each do |booking| %>
+      <%= link_to booking_path(booking.id), class:'text-decoration-none' do %>
+        <%= booking.start_time.strftime("%l:%M %p until #{booking.end_time.strftime("%l:%M %p")} on the #{booking.start_time.day.ordinalize} of %B") %>
+      <% end %>
+    <% end %> <br>
+    <%= link_to 'Back to chef', chef_path(params[:chef_id]) %> <br>
     </div>
   </div>
 </div>

@@ -14,5 +14,6 @@
   </p><br>
   <%= link_to 'Edit', edit_chef_path(@chef.id) %><br>
   <%= link_to 'Back', chefs_path %><br>
-  <%= link_to 'Book this Chef', new_chef_booking_path(@chef.id) %>
+  <%= link_to 'Book this Chef', new_chef_booking_path(@chef.id) %> <br>
+  <%= link_to 'See all my bookings', chef_bookings_path(@chef.id) %>
 </div>

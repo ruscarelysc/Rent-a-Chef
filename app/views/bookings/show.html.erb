@@ -1,6 +1,6 @@
 <div class='container pt-5'>
   <h1>Booking with chef <%= @booking.chef.name %></h1>
-  <p>From: <%= @booking.start_time.strftime("%l:%M %p on the #{@booking.end_time.day.ordinalize} of %B") %></p>
+  <p>From: <%= @booking.start_time.strftime("%l:%M %p on the #{@booking.start_time.day.ordinalize} of %B") %></p>
   <p>To: <%= @booking.end_time.strftime("%l:%M %p on the #{@booking.end_time.day.ordinalize} of %B") %></p>
 
   <%= link_to 'Back to chef', chef_path(@booking.chef)  %> <br>
