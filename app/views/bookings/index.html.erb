@@ -1,14 +1,23 @@
+<div class="row" style="margin-left: 100px; margin-top: 50px;">
+  <%= link_to '< Back to chefs', chefs_path, :style=>"color: #476072"; %>
+</div>
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-black p-4">
-    <h1>Bookings</h1>
+  <div class="p-4">
+    <h1 class="text-center">Bookings</h1>
   <div class="container py-5">
-    <div class="d-flex align-items-center justify-content-between mb-3">
-    <p><% current_user.bookings.each do |booking| %>
-      <%= link_to booking_path(booking.id), class:'text-decoration-none' do %>
-        <%= booking.start_time.strftime("%l:%M %p until #{booking.end_time.strftime("%l:%M %p")} on the #{booking.start_time.day.ordinalize} of %B") %>
-      <% end %>
-    <% end %> <br>
-    <%= link_to 'Back to chefs', chefs_path %> <br>
+  <ul class="list-unstyled">
+  <% current_user.bookings.each do |booking| %>
+  <li class="media" style="margin-top:24px">
+    <div class="flat-card-image" style='width: 84px; height: 84px; background-size: cover; background-position: center; background-image: url(<%= booking.chef.photo %>); margin-right: 24px'></div>
+    <div class="media-body">
+      <h5 class="mt-0 mb-1"><%= booking.chef.name %></h5>
+      <p><%= booking.start_time.strftime("%l:%M %p until #{booking.end_time.strftime("%l:%M %p")} on the #{booking.start_time.day.ordinalize} of %B") %></p>
+      <div>
+      <%= link_to 'See booking', booking_path(booking.id), class:'btn btn-ghost' %>
+      </div>
     </div>
+  </li>
+  <% end %>
+</ul>
   </div>
 </div>
