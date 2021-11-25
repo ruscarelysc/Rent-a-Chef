@@ -22,5 +22,7 @@ document.addEventListener('turbolinks:load', () => {
     altInput: true,
     enableTime: true,
     dateFormat: "Y-m-d H:i",
+    minDate: "today",
+    defaultDate: "today"
 });
 })
