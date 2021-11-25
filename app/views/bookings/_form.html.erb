@@ -1,15 +1,18 @@
+<div class="row" style="margin-left: 100px; margin-top: 50px;" >
+  <%= link_to '< Back to Chefs', chefs_path, :style=>"color: #476072;"%>
+</div>
 <div class="container py-5">
-    <h3>New Booking</h3>
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <%= simple_form_for [@chef, @booking] do |f| %>
-          <%= f.input :start_time, input_html: { id: "flatpickr" }, as: :string%>
-          <%= f.input :end_time, input_html: { id: "flatpickr" }, as: :string%>
-          <%= f.submit class: 'btn btn-ghost' %>
-        <% end %>
+    <h3 class="text-center">New Booking</h3>
+    <div class="row">
+      <div class="col-12 col-md-6 offset-lg-3">
+        <div class="bg-white rounded p-3 shadow">
+          <%= simple_form_for [@chef, @booking] do |f| %>
+            <%= f.input :start_time, input_html: { id: "flatpickr" }, as: :string%>
+            <%= f.input :end_time, input_html: { id: "flatpickr" }, as: :string%>
+            <%= f.submit class: "btn btn-ghost" %>
+          <% end %>
+        </div>
+          <%# <%= link_to 'Back to Chefs', chefs_path %>
       </div>
-        <%= link_to 'Back to Chefs', chefs_path %>
     </div>
-  </div>
 </div>
