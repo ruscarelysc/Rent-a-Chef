@@ -3,14 +3,15 @@
   <div class="row" style='display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px;'>
       <% @chefs.each do |chef| %>
         <%= link_to chef_path(chef), class:'text-decoration-none' do %>
-        <div class="col-4" style='max-width: 100%'>
-          <div class='flat-card' style='width: 300px; border-radius: 2px; box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%); margin: 0.5rem 0 1rem 0;'>
+
+        <div class="col-5" style='max-width: 100%'>
+          <div class='flat-card' style='box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%)'>
             <div class="flat-card-image" style='height: 300px; background-size: cover; background-position: center; background-image: url(<%= chef.photo %>)'></div>
-            <div class="flat-card-content" style='height: 100px; padding: 24px; background-color: #F8F9FA;'>
+            <div class="flat-card-content" style='height: 100px; padding: 24px; \\'>
               <div class="flat-card-title">
                 <h4 class='title' style='font-weight: 700;'>
                   <%= chef.name %></h4>
-                  <p style='color: grey;'><%= chef.category %></p>
+                  <p style='color: #476072;'><%= chef.category %></p>
 
               </div>
             </div>
@@ -20,3 +21,4 @@
       <% end %>
     </div>
 </div>
+
