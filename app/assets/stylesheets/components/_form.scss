@@ -1,19 +1,17 @@
 .btn-ghost {
-  color: #476072;
-  border: 1px solid #334257;
+  color: #EEEEEE;
+  background-color: #334257;;
   padding: 8px 8px;
   border-radius: 4px;
   font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
   margin-top: 15px;
   justify-content: center;
-  // align-items: center;
   display: flex;
 }
 
 .btn-ghost:hover {
-  opacity: 1;
+opacity: 2;
+color: #d3cece;
 }
 
 .form-control {
@@ -29,12 +27,9 @@
 label {
   color: #476072;
   margin-top: 10px;
-}
+  margin-bottom: 10px;
 
-// .shadow {
-  // box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 7%) !important;
-  // box-shadow: 0 2px 2px 0 rgb(0 0 255/14%); esta es la q me gusta
-// }
+}
 
 .rounded {
   border-radius: 4px !important;
@@ -46,16 +41,16 @@ label {
     font-weight: 500;
 }
 
-.integer, .text {
-    margin-right: 10px;
-}
 
-.numeric {
-  margin-left: 14px;
-  width: 200px;
-}
-
-.bg-white {
+.form-container {
  justify-content: center;
  display: flex;
+ padding-top: 30px;
+ padding-bottom: 55px;
+ box-shadow: 0 2px 2px 0 #0000ff24;
+ border-radius: 4px;
+  input, textarea {
+    width: 100%;
+  }
+
 }

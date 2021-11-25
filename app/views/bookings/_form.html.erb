@@ -2,10 +2,11 @@
   <%= link_to '< Back to Chefs', chefs_path, :style=>"color: #476072;"%>
 </div>
 <div class="container py-5">
-    <h3 class="text-center">New Booking</h3>
+    <h3 class="text-center">New Booking with <br>
+    <%= @chef.name %></h3>
     <div class="row">
-      <div class="col-12 col-md-6 offset-lg-3">
-        <div class="bg-white rounded p-3 shadow">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-md-3">
+        <div class="form-container ">
           <%= simple_form_for [@chef, @booking] do |f| %>
             <%= f.input :start_time, input_html: { id: "flatpickr" }, as: :string%>
             <%= f.input :end_time, input_html: { id: "flatpickr" }, as: :string%>
