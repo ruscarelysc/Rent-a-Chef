@@ -2,7 +2,7 @@
   background: #F4F4F4;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
@@ -23,4 +23,9 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+.footer-copyright{
+  color: #334257;
+  font-size: 18px;
+  // text-shadow: 0px -1px 1px rgb(56 130 206 / 45%);
 }
