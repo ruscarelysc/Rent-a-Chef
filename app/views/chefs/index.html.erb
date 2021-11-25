@@ -1,6 +1,8 @@
 <div class="container mt-3">
-
-  <div class="row" style='display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px;'>
+  <div class="row d-flex" style="align-items: center; justify-content: center;">
+    <h1 class="d-flex p-3" style="font-weight: 700;">Our Chefs</h1>
+  </div>
+  <div class="row" style='display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; align-items: center; justify-content: center;'>
       <% @chefs.each do |chef| %>
         <%= link_to chef_path(chef), class:'text-decoration-none' do %>
 
@@ -21,4 +23,3 @@
       <% end %>
     </div>
 </div>
-
