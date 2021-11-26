@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -16,13 +17,37 @@ ActiveStorage.start()
 import 'bootstrap';
 import flatpickr from "flatpickr";
 
+
 document.addEventListener('turbolinks:load', () => {
-  flatpickr("#flatpickr", {
+  const startDateInput = document.querySelector("[name='booking[start_time]']");
+  const endDateInput = document.querySelector("[name='booking[end_time]']");
+  flatpickr(startDateInput, {
     allowInput: true,
     altInput: true,
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     minDate: "today",
-    defaultDate: "today"
-});
+    defaultDate: "today",
+  });
+  let endFlatpickr = flatpickr(endDateInput, {
+    allowInput: true,
+    altInput: true,
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    minDate: startDateInput.value,
+    defaultDate: startDateInput.value
+  });
+  startDateInput.addEventListener("change", (e) => {
+    endFlatpickr.destroy()
+    if (startDateInput != "today") {
+    let endFlatpickr = flatpickr(endDateInput, {
+      allowInput: true,
+      altInput: true,
+      enableTime: true,
+      dateFormat: "Y-m-d H:i",
+      minDate: startDateInput.value,
+      defaultDate: startDateInput.value
+    });
+  };
+  })
 })
