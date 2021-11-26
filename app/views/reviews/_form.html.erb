@@ -1,6 +1,6 @@
-<div class="row" style="margin-left: 100px; margin-top: 50px;" >
+<%= render 'shared/header' do %>
   <%= link_to '< Back', booking_path(@booking) , :style=>"color: #476072;"%>
-</div>
+<% end %>
 
 <div class="container py-5">
   <h3 class="text-center">New Review for <br>
@@ -13,5 +13,7 @@
           <%= f.input :content %>
           <%= f.submit class: 'btn btn-ghost' %>
         <% end %>
-    <%# <%= link_to '< Back', booking_path(@booking) %>
+      </div>
+    </div>
+  </div>
 </div>

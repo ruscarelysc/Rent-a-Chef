@@ -18,7 +18,10 @@
   <body style="font-family: 'Lato', sans-serif;">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div style="min-height: calc(100vh - 60px);">
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
   </body>
-  
+
 </html>

@@ -1,6 +1,6 @@
-<div class="row" style="margin-left: 100px; margin-top: 50px;" >
-  <%= link_to '< Back to Chef', chef_path(@booking.chef), :style=>"color: #476072;"%>
-</div>
+<%= render 'shared/header' do %>
+ <%= link_to '< Back to Chef', chef_path(@booking.chef), :style=>"color: #476072;"%>
+<% end %>
 
 <div class='container'>
     <div class="container p-3 d-flex">
@@ -10,7 +10,7 @@
       </div>
       </div>
       <div class="container p-3">
-        <h3>Booking with: <br>
+        <h3>Booking with <br>
         <%= @booking.chef.name %></h3><br>
         <p><strong>From</strong>: <%= @booking.start_time.strftime("%l:%M %p on the #{@booking.start_time.day.ordinalize} of %B") %></p>
         <p><strong>To</strong>: <%= @booking.end_time.strftime("%l:%M %p on the #{@booking.end_time.day.ordinalize} of %B") %></p>

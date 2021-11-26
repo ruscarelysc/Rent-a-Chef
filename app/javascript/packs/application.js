@@ -28,6 +28,7 @@ document.addEventListener('turbolinks:load', () => {
     dateFormat: "Y-m-d H:i",
     minDate: "today",
     defaultDate: "today",
+    minTime: "09:00"
   });
   let endFlatpickr = flatpickr(endDateInput, {
     allowInput: true,

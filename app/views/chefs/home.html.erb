@@ -27,13 +27,13 @@
 </div>
 
 <!--
-<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" data-type="multi">
   <div class="carousel-inner row w-100 mx-auto" role="listbox">
     <% @chefs.each_with_index do |chef, i| %>
         <% if i == 0 %>
         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
         <%= link_to chef_path(chef), class:'text-decoration-none' do %>
-            <div class="col-md-4">
+            <div class="carousel-col">
                 <div class='flat-card' style='box-shadow: 0 2px 2px 0 rgb(0 0 255 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%)'>
                   <div class="flat-card-image" style='height: 300px; background-size: cover; background-position: center; background-image: url(<%= chef.photo %>)'></div>
                   <div class="flat-card-content" style='height: 100px; padding: 24px; \\'>
@@ -50,7 +50,7 @@
         <% else %>
         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
         <%= link_to chef_path(chef), class:'text-decoration-none' do %>
-            <div class="col-md-4">
+            <div class="carousel-col">
                 <div class='flat-card' style='box-shadow: 0 2px 2px 0 rgb(0 0 255 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%)'>
                   <div class="flat-card-image" style='height: 300px; background-size: cover; background-position: center; background-image: url(<%= chef.photo %>)'></div>
                   <div class="flat-card-content" style='height: 100px; padding: 24px; \\'>
@@ -76,7 +76,3 @@
   </button>
         </div>
 -->
-
-<footer>
-  <%= render 'shared/footer' %>
-</footer>

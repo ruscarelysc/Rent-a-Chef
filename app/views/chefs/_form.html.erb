@@ -1,6 +1,7 @@
-<div class="row" style="margin-left: 100px; margin-top: 50px;" >
-  <%= link_to '< Back', chefs_path , :style=>"color: #476072;"%>
-</div>
+<%= render 'shared/header' do %>
+ <%= link_to '< Back', chefs_path , :style=>"color: #476072;"%>
+<% end %>
+
 <div class="container py-5">
   <h3 class="text-center">New Chef</h3>
   <div class="row">
