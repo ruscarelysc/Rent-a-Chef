@@ -10,8 +10,8 @@
       </div>
       </div>
       <div class="container p-3">
-        <h3>Booking with <br>
-        <%= @booking.chef.name %></h3>
+        <h3>Booking with: <br>
+        <%= @booking.chef.name %></h3><br>
         <p><strong>From</strong>: <%= @booking.start_time.strftime("%l:%M %p on the #{@booking.start_time.day.ordinalize} of %B") %></p>
         <p><strong>To</strong>: <%= @booking.end_time.strftime("%l:%M %p on the #{@booking.end_time.day.ordinalize} of %B") %></p>
         <% if @booking.chef.name == "Remi the Rat"%>
@@ -21,7 +21,7 @@
         <% end %>
       </div>
       <div class="container p-3" style="align-items: center; justify-content: left; display: flex;">
-        <a href="<%=  new_chef_booking_review_path(@booking.chef, @booking) %>" class="btn btn-ghost" style="height: 40px;">Book this Chef</a>
+        <a href="<%=  new_chef_booking_review_path(@booking.chef, @booking) %>" class="btn btn-ghost" style="height: 40px;">Add review</a>
       </div>
     </div>
     <div>

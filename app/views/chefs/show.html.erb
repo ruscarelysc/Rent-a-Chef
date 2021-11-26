@@ -10,14 +10,14 @@
       </div>
       </div>
       <div class="container p-3" style="">
-        <h1 style="font-weight: 700;"><%= @chef.name %></h1>
-        <h5 style="color: rgba(100,100,100,0.7); font-weight: 700;">
+        <h1 style=""><%= @chef.name %></h1>
+        <h5 style="color: rgba(100,100,100,0.7);">
         <% if @chef.name == "Remi the Rat"%>
             <%= @chef.price %> Pieces of Cheese</h5>
           <% else %>
             $<%= @chef.price %>.00 per hour</h5>
           <% end %>
-        <p style='color: rgba(0,0,0,0.8); font-weight: 700;'><%= @chef.category %></p>
+        <p style='color: rgba(0,0,0,0.8);'><%= @chef.category %></p>
       </div>
       <div class="container p-3" style="align-items: center; justify-content: left; display: flex;">
         <a href="<%= new_chef_booking_path(@chef.id) %>" class="btn btn-ghost" style="height: 40px;">Book this Chef</a>
@@ -29,7 +29,7 @@
   </div>
   <br>
   <div class="container" style="justify-content: center;">
-  <h4 class="pt-5 pb-3" style="justify-content: center; display: flex; font-weight: 700;">Reviews</h4>
+  <h4 class="pt-5 pb-3" style="justify-content: center; display: flex;">Reviews</h4>
     <% if @chef.reviews.length == 0  %>
       <div style="justify-content: center; display: flex;">
         <p>No reviews yet</p>
@@ -38,7 +38,7 @@
     <div class="container" style="align-items: center; justify-content: center;">
       <% @chef.reviews.each do |review| %>
         <div class="card p-3 pb-2 mb-3" style="">
-          <div class="d-flex mb-4" style="justify-content: space-between;"><h6 style="color: rgba(0,0,0,0.5);"><%= review.booking.user.email %></h6><h6 style="font-weight: 700;"><%= review.rating %>/10</h6></div>
+          <div class="d-flex mb-4" style="justify-content: space-between;"><h6 style="color: rgba(0,0,0,0.5);"><%= review.booking.user.email %></h6><h6 style="font-weight: 00;"><%= review.rating %>/10</h6></div>
           <p>' <%= review.content %> '</p>
         </div>
       <% end %>
