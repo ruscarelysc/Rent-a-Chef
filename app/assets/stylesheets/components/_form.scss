@@ -28,6 +28,7 @@ label {
   color: #476072;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-right: 10px;
 
 }
 
@@ -41,14 +42,22 @@ label {
     font-weight: 500;
 }
 
+form {
+  width: 100%;
+  padding-left: 60px;
+  padding-right: 60px;
+}
 
 .form-container {
+ padding-left: 80px;
+ padding-right: 80px;
  justify-content: center;
  display: flex;
  padding-top: 30px;
  padding-bottom: 55px;
  box-shadow: 0 2px 2px 0 #0000ff24;
  border-radius: 4px;
+ width: 100%;
   input, textarea {
     width: 100%;
   }
